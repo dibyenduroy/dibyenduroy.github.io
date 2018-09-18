@@ -1,2 +1,2 @@
 # dibyenduroy.github.io
-For my projects
+This is the place where all my projects live
