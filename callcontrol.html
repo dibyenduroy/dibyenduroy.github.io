@@ -196,17 +196,7 @@ class: middle, center, inverse
 * We have also included the sessionId and partyId in existing presence Subscriptions
 * Details are available at https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/
 * Example of a CSN and Presence Subscription Endpoint
-` POST /restapi/v1.0/subscription
-
-{
-    "eventFilters": [
-      "/restapi/v1.0/account/~/telephony/sessions",
-      "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true"
-    ],
-    "deliveryMode": {
-    "transportType": "PubNub"
-    }
-}`
+` POST /restapi/v1.0/subscription {  "eventFilters": [  "/restapi/v1.0/account/~/telephony/sessions",  "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true"], "deliveryMode": {"transportType": "PubNub" }}`
 ---
 
 ### Response Headers
