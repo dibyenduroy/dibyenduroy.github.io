@@ -189,17 +189,24 @@ class: middle, center, inverse
 
 ---
 
-### API Rate Limits
+### Call Session Notification
 
-1. Set for app/user pair
-1. Set for API groups (`X-Rate-Limit-Group` header)
-1. Specified in Developer Portal for your app
-1. Contact Dev Support if you need more
+* CSN is a new subscription data stream that contains telephony session details for every step of a call
+* CSN contains sessionId and partyId that is needed to manage and control an active call
+* We have also included the sessionId and partyId in existing presence Subscriptions
+* Details are available at https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/
+* Example of a CSN and Presence Subscription Endpoint
+` POST /restapi/v1.0/subscription
 
-<center>
-<img src="images/poll-n-sync_rate-limits.png" style="width:100%;height:auto" />
-</center>
-
+{
+    "eventFilters": [
+      "/restapi/v1.0/account/~/telephony/sessions",
+      "/restapi/v1.0/account/~/extension/~/presence?detailedTelephonyState=true&sipData=true"
+    ],
+    "deliveryMode": {
+    "transportType": "PubNub"
+    }
+}`
 ---
 
 ### Response Headers
