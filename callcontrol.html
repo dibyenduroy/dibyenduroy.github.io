@@ -202,11 +202,8 @@ class: middle, center, inverse
 * CSN is a new subscription data stream that contains <br> details for every step of a call <br>        
 * CSN contains sessionId and partyId that is needed to<br> manage and control an active call<br>
 * We have also included the sessionId and partyId in <br>existing presence Subscriptions<br>
-* Details are available [here] (https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/)
-        
-* Example of a CSN and Presence Subscription Endpoint
-        
-`POST /restapi/v1.0/subscription{"eventFilters["/restapi/v1.0/account/~/telephony/sessions","/restapi/v1.0/account/~/extension/~/presencedetailedTelephonyState=true&sipData=true"],"deliveryMode":{"transportType": "PubNub"}}`
+* Details are available [here](https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/)      
+
 ---
 
 ### Demo App
