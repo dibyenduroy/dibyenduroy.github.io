@@ -199,15 +199,19 @@ class: middle, center, inverse
 
 ### Call Session Notification
 
-* <sub>CSN is a new subscription data stream that contains details for every step of a call</sub>
+* <sub> CSN is a new subscription data stream that contains 
+        details for every step of a call</sub>
         
-* <sub>CSN contains sessionId and partyId that is needed to manage and control an active call</sub>
+* <sub> CSN contains sessionId and partyId that
+        is needed to manage and control an active call</sub>
         
-* <sub>We have also included the sessionId and partyId in existing presence Subscriptions</sub>
+* <sub> We have also included the sessionId and partyId
+        in existing presence Subscriptions</sub>
         
-* <sub>Details are available at https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/</sub>
+* <sub> Details are available at
+        https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/</sub>
         
-* <sub>Example of a CSN and Presence Subscription Endpoint</sub>
+* <sub> Example of a CSN and Presence Subscription Endpoint </sub>
         
 `POST /restapi/v1.0/subscription{"eventFilters["/restapi/v1.0/account/~/telephony/sessions","/restapi/v1.0/account/~/extension/~/presencedetailedTelephonyState=true&sipData=true"],"deliveryMode":{"transportType": "PubNub"}}`
 ---
