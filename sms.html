@@ -187,21 +187,27 @@ Russia: (Beta)
 
 ---
 
-### Call Control API Features - Beta
+### MMS
 
+Use RingCentral [MMS API](https://developer.ringcentral.com/api-reference#SMS-and-MMS-sendSMS) to send MMS.
 
-* Hold Call
-* UnHold Call
-* Mute Call
-* UnMute Call        
-* Transfer Call
-* Forward Call
-* Flip Call
-* Start Recording
-* Stop Recording
-* Reject Call
-* End Call
-* We are working on many more
+API Endpoint : `/account/~/extension/~/sms` (Same for SMS)
+        
+Sample Request Body : 
+
+`POST /restapi/v1.0/account/403391985008/extension/403391985008/sms
+Content-Type: multipart/mixed; boundary=Boundary_1_14413901_1361871080888
+--Boundary_1_14413901_1361871080888
+Content-Type: application/json; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+{"to" :[{"phoneNumber": "+18772004569"},{"phoneNumber": "+18772094569"}],
+"text" :"hello",
+"from" :{"phoneNumber": "+18882004237"}}
+--Boundary_1_14413901_1361871080888
+Content-Type: image/png
+Content-Disposition: attachment; filename="filename.png"
+Hello, World!
+--Boundary_1_14413901_1361871080888--`
 
 ---
 
