@@ -202,11 +202,63 @@ class: middle, center, inverse
 
 * CSN is a new subscription data stream that contains <br> details for every step of a call <br>
         
-* CSN contains sessionId and partyId that is needed to<br> manage and control an active call<br>
+* CSN contains sessionId and partyId that is needed to<br> manage and control an active call<br> sample CSN notification looks as below
         
 * We have also included the sessionId and partyId in <br>existing presence Subscriptions<br>
         
 * Details are available [here](https://ringcentral-api-docs.readthedocs.io/en/latest/active_call_control_overview/)      
+
+---
+
+### Call Session Notification
+
+Sample CSN Notification
+
+`"uuid": "6502620499417480203",
+  "event": "/restapi/v1.0/account/232352004/extension/232352004/telephony/sessions",
+  "timestamp": "2019-03-09T01:35:44.207Z",
+  "subscriptionId": "86e78332-5bf6-4946-8339-af98532bacf4",
+  "ownerId": "232352004",
+  "body": {
+    "sequence": 10,
+    "sessionId": "20591378004",
+    "telephonySessionId": "Y3MxNjk2MTIzOTgyODc2MjkzNTQxQDEwLjI4LjIwLjExMA",
+    "serverId": "10.28.20.110.TAM",
+    "eventTime": "2019-03-09T01:35:44.072Z",
+    "parties": [
+      {
+        "accountId": "232352004",
+        "extensionId": "232352004",
+        "id": "cs1696123982876293541-1",
+        "direction": "Outbound",
+        "to": {
+          "phoneNumber": "+14083388064"
+        },
+        "from": {
+          "phoneNumber": "+13133982190",
+          "extensionId": "232352004",
+          "deviceId": "60727004"
+        },
+        "recordings": [
+          {
+            "id": "6181405004",
+            "active": false
+          }
+        ],
+        "status": {
+          "code": "Disconnected",
+          "rcc": false
+        },
+        "missedCall": false,
+        "standAlone": false,
+        "muted": false
+      }
+    ],
+    "origin": {
+      "type": "Call"
+    }
+  }
+}`
 
 ---
 
