@@ -216,40 +216,13 @@ Sample Request & Response :
 
 ---
 ### Sample Code (Node.js) to send SMS
-<code> /* This Code is to Test SMS */
-const RC = require('ringcentral')
-const dotenv = require('dotenv')
-var RINGCENTRAL_RECEIVER='XXXXX';
-var RINGCENTRAL_USERNAME='XXXXX';
-var phone_array = ['+XXXXXX','+XXXXX']
-var rcsdk = new RC({
-    server: 'https://platform.ringcentral.com',
-    appKey: 'YYYYYYYYYYYYYY',
-    appSecret: 'ABCD############'
-});
-const platform = rcsdk.platform()
-platform.login({
-  username: '+XXXX',
-  extension: '101',
-  password: 'YYYYY'
-}).then(response => {
-    for (i=0;i<=phone_array.length;i++ ) {console.log("Sending SMS" + i);
-  platform.post('/account/~/extension/~/sms', {
-    from: { phoneNumber: RINGCENTRAL_USERNAME },
-    to: [
-      { phoneNumber: phone_array[i] }
-    ],
-    text: 'This is Toll-Free SMS Marketing. From RC Platform. Testing from Dibyendu (SMS Code)'
-  }).then(response => {
-    console.log('SMS sent: ' + response.json().id )
-  }).catch(e => {
-    console.error(e)
-  })
-}}).catch(e => {
-  console.error(e)
-})
- </code>
-Note : International MMS feature is not supported
+
+Sample code can be found [here](https://github.com/dibyenduroy/sms-demo)
+
+[SMS API Quick Start Guide](https://ringcentral-tutorials.github.io/sms-api-nodejs-quickstart/?distinctId=1622228020)
+
+[SMS Developer Guide Details](https://ringcentral-api-docs.readthedocs.io/en/latest/messages_introduction/)
+
 ---
 ### Call Session Notification
 
