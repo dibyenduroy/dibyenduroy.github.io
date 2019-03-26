@@ -219,26 +219,21 @@ Sample Request & Response :
 <code> /* This Code is to Test SMS */
 const RC = require('ringcentral')
 const dotenv = require('dotenv')
-
 var RINGCENTRAL_RECEIVER='XXXXX';
 var RINGCENTRAL_USERNAME='XXXXX';
-//var RINGCENTRAL_USERNAME='XXXX';
-var TEST_NUMBER ='+XXXXXXX'
 var phone_array = ['+XXXXXX','+XXXXX']
 var rcsdk = new RC({
     server: 'https://platform.ringcentral.com',
     appKey: 'YYYYYYYYYYYYYY',
     appSecret: 'ABCD############'
 });
-console.log("The Server name is "+ rcsdk.server);
 const platform = rcsdk.platform()
 platform.login({
   username: '+XXXX',
   extension: '101',
   password: 'YYYYY'
 }).then(response => {
-    for (i=0;i<=phone_array.length;i++ ) {
-      console.log("Sending SMS" + i);
+    for (i=0;i<=phone_array.length;i++ ) {console.log("Sending SMS" + i);
   platform.post('/account/~/extension/~/sms', {
     from: { phoneNumber: RINGCENTRAL_USERNAME },
     to: [
